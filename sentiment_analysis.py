@@ -59,10 +59,10 @@ def build_classifier_score(train_set, test_set, classifier):
 
 
 if __name__ == "__main__":
-    review_num = 5000
-    with open('pos_reviews.txt', 'r') as f:
+    review_num = 1900
+    with open('pos_book_reviews.txt', 'r') as f:
         pos_review = map(lambda data: list(jieba.cut(data)), f.readlines())[: review_num]
-    with open('neg_reviews.txt', 'r') as f:
+    with open('neg_book_reviews.txt', 'r') as f:
         neg_review = map(lambda data: list(jieba.cut(data)), f.readlines())[: review_num]
 
     word_scores = create_word_scores(pos_review, neg_review, 'pos', 'neg')
